@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+// src/components/AboutMe.tsx
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const AboutMe: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -8,29 +9,29 @@ const AboutMe: React.FC = () => {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const letters = containerRef.current.querySelectorAll('.anim-letter-about');
+    const letters = containerRef.current.querySelectorAll(".anim-letter-about");
 
     const ctx = gsap.context(() => {
-      // Image reveal animation
+      // Animação de entrada da imagem
       if (imageRef.current) {
         gsap.from(imageRef.current, {
           y: 50,
           opacity: 0,
           duration: 1.2,
           ease: "power3.out",
-          delay: 0.2
+          delay: 0.2,
         });
       }
 
-      // Blinking text animation (reusing logic from AnimatedHeader)
+      // Animação das letras piscando
       letters.forEach((letter) => {
-        gsap.set(letter, { 
-          color: 'transparent',
-          opacity: 1 
+        gsap.set(letter, {
+          color: "transparent",
+          opacity: 1,
         });
 
         gsap.to(letter, {
-          color: 'white',
+          color: "white",
           duration: Math.random() * 0.5 + 0.5,
           repeat: -1,
           repeatRefresh: true,
@@ -46,14 +47,17 @@ const AboutMe: React.FC = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="w-full text-white animate-in fade-in duration-700">
+    <div
+      ref={containerRef}
+      className="w-full text-white animate-in fade-in duration-700"
+    >
       {/* Animated Header */}
       <div className="mb-12 md:mb-20">
-        {["ABOUT", "ME"].map((line, lineIndex) => (
+        {["SOBRE", "MIM"].map((line, lineIndex) => (
           <div key={lineIndex} className="flex">
-            {line.split('').map((char, charIndex) => (
-              <span 
-                key={`${lineIndex}-${charIndex}`} 
+            {line.split("").map((char, charIndex) => (
+              <span
+                key={`${lineIndex}-${charIndex}`}
                 className="anim-letter-about font-[Archivo Black] text-[5rem] md:text-[8rem] lg:text-[11rem] uppercase tracking-tighter leading-[0.85] text-outline-white select-none"
                 style={{ fontFamily: '"Archivo Black", sans-serif' }}
               >
@@ -68,62 +72,64 @@ const AboutMe: React.FC = () => {
         {/* Left Column - Content */}
         <div className="md:col-span-5 flex flex-col gap-10 font-light leading-relaxed text-sm md:text-base">
           <div>
-            <h3 className="font-bold text-xs tracking-widest uppercase mb-4 text-white/70">Biography</h3>
+            <h3 className="font-bold text-xs tracking-widest uppercase mb-4 text-white/70">
+              Bio
+            </h3>
             <p className="mb-6">
-              I am a multi-disciplinary designer and art director based in São Paulo, dedicated to crafting immersive digital experiences and strong visual identities.
-            </p>
-            <p>
-              My work sits at the intersection of design, technology, and art. I believe in the power of motion and interactivity to tell stories that resonate. Every project is an opportunity to challenge the conventional and explore the new.
+              Olá! Meu nome é Felipe Mello Padula, sou diretor de arte. Não dá
+              para começar a falar de mim sem falar de música, que sempre foi
+              parte da minha vida e me acompanha desde sempre. Toquei
+              contrabaixo em bandas de rock de São Paulo por muitos anos, e até
+              hoje não largo o instrumento. Outro ponto a destacar são os
+              livros, adoro ler e acredito que leitura é isso: um convite para a
+              imaginação sair do papel e ganhar o mundo. E gostando tanto do
+              poder da imaginação me levou a publicidade, onde as ideias valem
+              muito. Como um bom D.A, cinema e fotografia são figurinhas
+              carimbadas no meu dia-dia. Me fascina como uma única imagem pode
+              dizer tudo. Comecei como assistente, virei diretor de arte júnior,
+              e depois passei três anos tocando meu próprio estúdio de 3D. Nesse
+              período, trabalhei com agências como Ogilvy e Lew Lara, e
+              participei de projetos que rodaram o mundo, incluindo uma campanha
+              para a Água de Coco Amazônia, que saiu nos Estados Unidos, na
+              França e em Dubai.
             </p>
           </div>
 
           <div className="grid grid-cols-2 gap-8">
             <div>
-              <h3 className="font-bold text-xs tracking-widest uppercase mb-4 text-white/70">Services</h3>
+              <h3 className="font-bold text-xs tracking-widest uppercase mb-4 text-white/70">
+                Services
+              </h3>
               <ul className="flex flex-col gap-2 opacity-90">
-                <li>Art Direction</li>
-                <li>Digital Design</li>
-                <li>UI/UX</li>
-                <li>Motion Design</li>
-                <li>Front-end Dev</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold text-xs tracking-widest uppercase mb-4 text-white/70">Recognition</h3>
-              <ul className="flex flex-col gap-2 opacity-90">
-                <li>Awwwards x2</li>
-                <li>FWA Site of the Day</li>
-                <li>Behance Featured</li>
-                <li>CSS Design Awards</li>
+                <li>Diretor de Arte</li>
+                <li>Design Digital</li>
+                <li>Artista 3D generalista</li>
               </ul>
             </div>
           </div>
 
           <div className="mt-4">
-             <p className="font-bold text-xs tracking-widest uppercase mb-4 text-white/70">Socials</p>
-             <div className="flex gap-4">
-               <a href="#" className="hover:text-black hover:bg-white px-2 py-1 -ml-2 transition-all duration-300 hover:scale-105">Instagram</a>
-               <a href="#" className="hover:text-black hover:bg-white px-2 py-1 transition-all duration-300 hover:scale-105">LinkedIn</a>
-               <a href="#" className="hover:text-black hover:bg-white px-2 py-1 transition-all duration-300 hover:scale-105">Twitter</a>
-             </div>
+            <p className="font-bold text-xs tracking-widest uppercase mb-4 text-white/70">
+              contato@felipempadula.com
+            </p>
           </div>
         </div>
 
         {/* Right Column - Image */}
         <div className="md:col-span-7">
-          <div className="relative overflow-hidden w-full h-[60vh] md:h-[80vh] bg-black/20">
-            <img 
+          {/* CORREÇÃO: 
+             1. 'bg-gray-900': Fundo escuro sólido para bloquear o vermelho da página. 
+                Se a imagem tiver transparência, mostrará cinza escuro, não vermelho.
+             2. 'h-[...]': Altura fixa para garantir o layout.
+          */}
+          <div className="relative overflow-hidden w-full h-[60vh] md:h-[80vh] bg-gray-900 rounded-lg">
+            <img
               ref={imageRef}
-              src="https://i.ibb.co/DgRQVtfj/felipe.jpg"
-              onError={(e) => {
-                 const target = e.target as HTMLImageElement;
-                 // Fallback attempt if direct link construction fails
-                 if (target.src !== 'https://ibb.co/DgRQVtfj') {
-                    target.src = 'https://ibb.co/DgRQVtfj';
-                 }
-              }}
-              alt="Felipe Mello Padula" 
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out"
+              src="/images/fel.png"
+              alt="Felipe Mello Padula"
+              // CORREÇÃO: 'mix-blend-normal' garante que a imagem não misture com o fundo.
+              // 'object-cover' garante que a imagem preencha tudo sem deixar tarjas.
+              className="w-full h-full object-cover transition-all duration-700 ease-out mix-blend-normal"
             />
           </div>
         </div>

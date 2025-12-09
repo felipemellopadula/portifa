@@ -15,18 +15,16 @@ export const PROJECTS: Project[] = [
     isDarkText: true, 
     agency: 'Miami Ad School',
     client: "McDonald's",
-    description: "Todo mundo já ouviu falar na expressão fome de monstro. Pensando nisso, criamos uma campanha divertida de Big Mac onde criaturas gigantes, representando a fome, invadem o McDonald's com aquele apetite impossível de ignorar. A cada hora, nossos funcionários enfrentam o desafio de alimentar essas feras de maneiras cada vez mais inusitadas.",
+    description: "Campanha para Big Mac, o ícone absoluto do McDonald’s no mundo. Para reforçar que ele mata qualquer tipo de fome, trouxemos personagens gigantes da cultura global, facilmente reconhecíveis, com uma linguagem superlativa e bem-humorada.",
     technicalDetails: [ "React", "GSAP" ],
-    testimonial: { text: "Amazing work.", author: "Sarah Jenkins" },
+    // testimonial removido aqui
     mediaSections: [
       { layout: 'full', items: [{ type: 'image', url: '/images/monstro_final.gif' }] },
       { layout: 'full', items: [{ type: 'image', url: '/images/02_menor.png' }] },
       { layout: 'full', items: [{ type: 'image', url: '/images/05.png' }] },
       { layout: 'full', items: [{ type: 'image', url: '/images/07.png' }] },
       { layout: 'full', items: [{ type: 'image', url: '/images/01.png' }] },
-      { layout: 'full', items: [{ type: 'image', url: '/images/08.png' }] },
-      { layout: 'full', items: [{ type: 'image', url: '/images/09.png' }] }
-    ]
+    ], // <--- ADICIONEI ESTA VÍRGULA E O COLCHETE DE FECHAMENTO
   },
 
   // === PROJETO 2: AI FRYER ===
@@ -60,7 +58,7 @@ export const PROJECTS: Project[] = [
     color: '#222831',
     agency: 'Miami Ad School',
     client: 'Audio A6 E-Tron',
-    description: "Transformamos o tempo, o verdadeiro luxo da classe A, no centro desta campanha. Para executivos e executivas, ele significa liberdade, autonomia e a chance de dedicar energia ao que realmente importa. E foi dessa relação com o tempo que nasceu o Cartier A6, uma edição limitada criada a partir da união entre dois ícones de luxo e tecnologia.",
+    description: "Para lançar Audi A6 e-tron no Brasil, criamos uma collab que é puro luxo: uma edição inédita e limitada de relógios Cartier A6. Uma verdadeira celebração ao tempo de rápido carregamento do carro elétrico.",
     mediaSections: [
         { layout: 'full', items: [{ type: 'image', url: '/images/kv-audi.png' }] },
         { layout: 'full', items: [{ type: 'image', url: '/images/Gemini_Generated_Image_3h8xk03h8xk03h8x.png' }] },
@@ -86,7 +84,7 @@ export const PROJECTS: Project[] = [
     detailBg: '#ffe600', 
     agency: 'Miami Ad School',
     client: 'Mercado Livre',
-    description: "Para a final da Libertadores, o Mercado Livre, patrocinador oficial, mostrou que sua entrega é tão rápida quanto a paixão do torcedor. Criamos uma campanha onde a velocidade da entrega se conecta com a urgência e a emoção de viver o futebol, garantindo que nada falte na hora do jogo.",
+    description: "Mercado Livre é patrocinador oficial da Conmebol Libertadores. Na partida final entre Flamengo e Palmeiras, em Lima, Peru, ativamos a marca através do conceito Entrega Campeã. Mercado Livre entregou para a torcida, ainda no estádio, a nova camisa do título - a tempo de comemorar com o time do coração.",
     mediaSections: [
       { layout: 'full', items: [{ type: 'image', url: '/images/abertura.png' }] },
       { layout: 'full', items: [{ type: 'image', url: '/images/aero4.png' }] },
@@ -101,21 +99,23 @@ export const PROJECTS: Project[] = [
         ] 
       },
       { layout: 'full', items: [{ type: 'image', url: '/images/faixa.png' }] },
+      { layout: 'full', items: [{ type: 'image', url: '/images/Instagram.webp' }] },
       { layout: 'full', items: [{ type: 'image', url: '/images/telaonovo.png' }] },
+      { layout: 'full', items: [{ type: 'image', url: '/images/push.png' }] },
+      { layout: 'full', items: [{ type: 'image', url: '/images/stories.png' }] },
     ]
   },
   
-  // === PROJETO 5: ÁGUA DE COCO AMAZÔNIA (ATUALIZADO) ===
+  // === PROJETO 5: ÁGUA DE COCO AMAZÔNIA ===
   {
     id: '5',
     year: '2025',
     role: 'Direção de Arte',
     title: 'Água de Coco Amazônia',
+    agency: "Ogilvy",
     color: '#51b36a',
     client: 'Água de Coco Amazônia',
-    description: "Visualizing the invisible.",
-    
-    // --- IMAGENS ADICIONADAS AQUI ---
+    description: "A água de coco Amazônia tem o propósito de levar o sabor e a força da nossa floresta para o mundo. Para marcar as novas embalagens do produto, criamos 72 imagens em 3D, destacando a identidade brasileira em cada detalhe, cores, formas e a energia única da Amazônia.",
     mediaSections: [
       { layout: 'full', items: [{ type: 'image', url: '/images/comp2.png' }] },
       { layout: 'full', items: [{ type: 'image', url: '/images/am.jpg' }] },
@@ -125,25 +125,55 @@ export const PROJECTS: Project[] = [
     ]
   },
 
-  // === OUTROS PROJETOS ===
+  // === PROJETO 6: YOURBAN2030 ===
   {
     id: '6',
     year: '2025',
     role: 'Direção de Arte',
     title: 'Yourban2030',
     color: '#2ec4b6',
+    agency: "Magla Creative LA",
     client: 'Yourban2030',
-    description: "From zero to one.",
-    mediaSections: []
+    description: "Em Nova York, a Yurban2030 lança uma campanha para chamar atenção ao impacto ambiental nas grandes cidades. Com o conceito Nature Asks for Help, a marca transforma o pedido de socorro da natureza em movimento cultural e urbano.",
+    mediaSections: [
+      { layout: 'full', items: [{ type: 'image', url: '/images/sos1.png' }] },
+      { layout: 'full', items: [{ type: 'image', url: '/images/sos2.png' }] },
+      { layout: 'full', items: [{ type: 'image', url: '/images/sos3.png' }] },
+      { layout: 'full', items: [{ type: 'image', url: '/images/sos4.png' }] },
+    ]
   },
+  
+  // === PROJETO 7: ESPN ===
   {
     id: '7',
     year: '2025',
     role: 'Direção de Arte',
     title: 'ESPN',
     color: '#00B7B5',
-    client: 'Yourban2030',
-    description: "From zero to one.",
-    mediaSections: []
+    agency: "Projeto Pessoal",
+    client: 'ESPN',
+    description: "A ESPN lança uma campanha que coloca em foco a intensidade e o esforço diário dos atletas. Com o conceito É Pura Emoção, a marca transforma cada sacrifício, vitória e superação em narrativa poderosa.",
+    mediaSections: [
+        { layout: 'full', items: [{ type: 'image', url: '/images/A.jpg' }] },
+        { layout: 'full', items: [{ type: 'image', url: '/images/bill.jpg' }] },
+        { layout: 'full', items: [{ type: 'image', url: '/images/D.png' }] },
+    ]
+  },
+
+  // === PROJETO 8: SKOL BEATS ===
+  {
+    id: '8',
+    year: '2025',
+    role: 'Direção de Arte',
+    title: 'SKOL BEATS',
+    color: '#7132CA',
+    agency: 'Projeto Pessoal',
+    client: 'Skol Beats',
+    description: "Skol Beats lança uma campanha que celebra a identidade única de cada festa. Com o conceito Toda Bibe Tem um Som, a marca transforma o universo das “bibas” em ritmo, cor e atitude.",
+    mediaSections: [
+        { layout: 'full', items: [{ type: 'image', url: '/images/09a.jpg' }] },
+        { layout: 'full', items: [{ type: 'image', url: '/images/10.jpg' }] },
+        { layout: 'full', items: [{ type: 'image', url: '/images/09b.png' }] },
+    ]
   }
 ];

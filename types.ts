@@ -4,6 +4,8 @@ export interface MediaItem {
   type: 'image' | 'video';
   url: string;
   alt?: string;
+  // --- CORREÇÃO: Adicionada a propriedade opcional className ---
+  className?: string; 
 }
 
 export interface MediaSection {
@@ -22,11 +24,10 @@ export interface Project {
   year: string;
   role: string;
   title: string;
-  color: string; // Cor usada na Home/Lista
+  color: string;
   
-  // NOVAS PROPRIEDADES
-  detailBg?: string; // Cor de fundo específica da página interna (ex: #FBEFEF)
-  isDarkText?: boolean; // Se true, inverte o texto para escuro (para fundos claros)
+  detailBg?: string; 
+  isDarkText?: boolean; 
 
   agency?: string;
   client: string;

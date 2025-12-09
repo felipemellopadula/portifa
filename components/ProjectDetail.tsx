@@ -1,3 +1,4 @@
+// src/components/ProjectDetail.tsx
 import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import gsap from "gsap";
@@ -453,14 +454,11 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
   const words = project.title.replace(/ \//g, "\u00A0/").split(" ");
 
   // --- CORREÇÃO DO FUNDO ---
-  // Este useEffect é crucial. Ele força a cor de fundo do body para a cor interna do projeto
-  // assim que o componente é montado.
   useEffect(() => {
     const originalBackgroundColor = document.body.style.backgroundColor;
     const bgColor = project.detailBg || project.color;
     document.body.style.backgroundColor = bgColor;
 
-    // Garante que o container principal também tenha a cor, se necessário
     if (containerRef.current) {
       containerRef.current.style.backgroundColor = bgColor;
     }
@@ -476,7 +474,6 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
   return (
     <div
       ref={containerRef}
-      // Aplicamos a cor diretamente no estilo para garantir que ela seja usada
       style={{ backgroundColor: project.detailBg || project.color }}
       className={`w-full min-h-screen pb-20 font-mono relative transition-colors duration-500 ${theme.text}`}
     >
@@ -543,21 +540,28 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
           <p className="text-xl md:text-3xl leading-relaxed font-light mb-8">
             {project.description}
           </p>
-          {project.technicalDetails && (
+
+          {/* REMOVIDA A SEÇÃO DE DETALHES TÉCNICOS DAQUI */}
+
+          {project.testimonial && (
             <ExpandableSection
-              title="Detalhes Técnicos"
+              title="Depoimentos do cliente"
               borderColorClass={theme.border}
             >
-              <ul
-                className={`list-disc list-inside font-light space-y-2 text-base md:text-lg ${theme.textLow}`}
+              <blockquote
+                className={`italic border-l-2 pl-4 my-2 text-base md:text-lg leading-relaxed ${
+                  theme.textLow
+                } ${project.isDarkText ? "border-[#DC0000]" : "border-white"}`}
               >
-                {project.technicalDetails.map((detail, i) => (
-                  <li key={i}>{detail}</li>
-                ))}
-              </ul>
+                "{project.testimonial.text}"
+              </blockquote>
+              <p
+                className={`text-sm font-bold mt-4 uppercase tracking-wider ${theme.textLow}`}
+              >
+                — {project.testimonial.author}
+              </p>
             </ExpandableSection>
           )}
-          {/* Seção de depoimentos removida conforme solicitado */}
         </div>
       </div>
 
