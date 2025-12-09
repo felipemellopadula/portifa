@@ -75,7 +75,7 @@ export const PROJECTS: Project[] = [
     ]
   },
 
-  // === PROJETO 4: MERCADO LIVRE (ATUALIZADO) ===
+  // === PROJETO 4: MERCADO LIVRE ===
   {
     id: '4',
     year: '2025',
@@ -87,48 +87,62 @@ export const PROJECTS: Project[] = [
     agency: 'Miami Ad School',
     client: 'Mercado Livre',
     description: "Para a final da Libertadores, o Mercado Livre, patrocinador oficial, mostrou que sua entrega é tão rápida quanto a paixão do torcedor. Criamos uma campanha onde a velocidade da entrega se conecta com a urgência e a emoção de viver o futebol, garantindo que nada falte na hora do jogo.",
-    
     mediaSections: [
       { layout: 'full', items: [{ type: 'image', url: '/images/abertura.png' }] },
       { layout: 'full', items: [{ type: 'image', url: '/images/aero4.png' }] },
-      
-      // --- MUDANÇA AQUI ---
-      // Adicionei a classe 'max-h-[600px] object-cover' para limitar a altura da imagem
       { 
         layout: 'full', 
         items: [
           { 
             type: 'image', 
             url: '/images/close_fita_caixa.png',
-            // Adicione esta propriedade 'className' para aplicar classes extras na imagem
             className: 'max-h-[600px] object-cover w-full' 
           }
         ] 
       },
-      
       { layout: 'full', items: [{ type: 'image', url: '/images/faixa.png' }] },
       { layout: 'full', items: [{ type: 'image', url: '/images/telaonovo.png' }] },
     ]
   },
   
-  // === OUTROS PROJETOS ===
+  // === PROJETO 5: ÁGUA DE COCO AMAZÔNIA (ATUALIZADO) ===
   {
     id: '5',
-    year: '2021',
-    role: 'DevOps',
-    title: 'YET ONE',
-    color: '#ff9f1c',
-    client: 'Server Mesh',
+    year: '2025',
+    role: 'Direção de Arte',
+    title: 'Água de Coco Amazônia',
+    color: '#51b36a',
+    client: 'Água de Coco Amazônia',
     description: "Visualizing the invisible.",
+    
+    // --- IMAGENS ADICIONADAS AQUI ---
+    mediaSections: [
+      { layout: 'full', items: [{ type: 'image', url: '/images/comp2.png' }] },
+      { layout: 'full', items: [{ type: 'image', url: '/images/am.jpg' }] },
+      { layout: 'full', items: [{ type: 'image', url: '/images/out1.png' }] },
+      { layout: 'full', items: [{ type: 'image', url: '/images/out2.png' }] },
+      { layout: 'full', items: [{ type: 'image', url: '/images/am2.jpg' }] },
+    ]
+  },
+
+  // === OUTROS PROJETOS ===
+  {
+    id: '6',
+    year: '2025',
+    role: 'Direção de Arte',
+    title: 'Yourban2030',
+    color: '#2ec4b6',
+    client: 'Yourban2030',
+    description: "From zero to one.",
     mediaSections: []
   },
   {
-    id: '6',
-    year: '2020',
-    role: 'Strategy',
-    title: 'LAST ONE',
-    color: '#2ec4b6',
-    client: 'StartUp Inc',
+    id: '7',
+    year: '2025',
+    role: 'Direção de Arte',
+    title: 'ESPN',
+    color: '#00B7B5',
+    client: 'Yourban2030',
     description: "From zero to one.",
     mediaSections: []
   }
