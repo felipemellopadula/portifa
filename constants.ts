@@ -19,11 +19,12 @@ export const PROJECTS: Project[] = [
     technicalDetails: [ "React", "GSAP" ],
     // testimonial removido aqui
     mediaSections: [
-      { layout: 'full', items: [{ type: 'image', url: '/images/video.mp4' }] },
+      { layout: 'full', items: [{ type: 'video', url: '/images/video2.mp4' }] },
       { layout: 'full', items: [{ type: 'image', url: '/images/02mc.webp' }] },
       { layout: 'full', items: [{ type: 'image', url: '/images/03mc.webp' }] },
       { layout: 'full', items: [{ type: 'image', url: '/images/04mc.webp' }] },
       { layout: 'full', items: [{ type: 'image', url: '/images/01mc.webp' }] },
+        { layout: 'full', items: [{ type: 'image', url: '/images/05mc.webp' }] },
     ], // <--- ADICIONEI ESTA VÍRGULA E O COLCHETE DE FECHAMENTO
   },
 
@@ -176,7 +177,7 @@ export const PROJECTS: Project[] = [
     color: '#7132CA',
     agency: 'Projeto Pessoal',
     client: 'Skol Beats',
-    description: "Skol Beats lança uma campanha que celebra a identidade única de cada festa. Com o conceito Toda Vibe Tem um Som, a marca transforma o universo das “bibas” em ritmo, cor e atitude.",
+    description: "Skol Beats lança uma campanha que celebra a identidade única de cada festa. Com o conceito Toda Vibe Tem um Som, a marca transforma o universo Skol Beats em ritmo, cor e atitude.",
     mediaSections: [
         { layout: 'full', items: [{ type: 'image', url: '/images/beats1.webp' }] },
         { layout: 'full', items: [{ type: 'image', url: '/images/beats2.webp' }] },

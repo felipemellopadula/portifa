@@ -8,12 +8,9 @@ const AboutMe: React.FC = () => {
 
   useEffect(() => {
     if (!containerRef.current) return;
-
     const letters = containerRef.current.querySelectorAll(".anim-letter-about");
-
     const ctx = gsap.context(() => {
-      // Animação de entrada da imagem
-      if (imageRef.current) {
+      if (imageRef.current)
         gsap.from(imageRef.current, {
           y: 50,
           opacity: 0,
@@ -21,15 +18,8 @@ const AboutMe: React.FC = () => {
           ease: "power3.out",
           delay: 0.2,
         });
-      }
-
-      // Animação das letras piscando
       letters.forEach((letter) => {
-        gsap.set(letter, {
-          color: "transparent",
-          opacity: 1,
-        });
-
+        gsap.set(letter, { color: "transparent", opacity: 1 });
         gsap.to(letter, {
           color: "white",
           duration: Math.random() * 0.5 + 0.5,
@@ -42,7 +32,6 @@ const AboutMe: React.FC = () => {
         });
       });
     }, containerRef);
-
     return () => ctx.revert();
   }, []);
 
@@ -52,13 +41,13 @@ const AboutMe: React.FC = () => {
       className="w-full text-white animate-in fade-in duration-700"
     >
       {/* Animated Header */}
-      <div className="mb-12 md:mb-20">
+      <div className="mb-8 md:mb-20">
         {["SOBRE", "MIM"].map((line, lineIndex) => (
           <div key={lineIndex} className="flex">
             {line.split("").map((char, charIndex) => (
               <span
                 key={`${lineIndex}-${charIndex}`}
-                className="anim-letter-about font-[Archivo Black] text-[5rem] md:text-[8rem] lg:text-[11rem] uppercase tracking-tighter leading-[0.85] text-outline-white select-none"
+                className="anim-letter-about font-[Archivo Black] text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[11rem] uppercase tracking-tighter leading-[0.85] text-outline-white select-none"
                 style={{ fontFamily: '"Archivo Black", sans-serif' }}
               >
                 {char}
@@ -68,9 +57,9 @@ const AboutMe: React.FC = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-20">
         {/* Left Column - Content */}
-        <div className="md:col-span-5 flex flex-col gap-10 font-light leading-relaxed text-sm md:text-base">
+        <div className="lg:col-span-5 flex flex-col gap-8 md:gap-10 font-light leading-relaxed text-sm md:text-base order-2 lg:order-1">
           <div>
             <h3 className="font-bold text-xs tracking-widest uppercase mb-4 text-white/70">
               Bio
@@ -94,8 +83,7 @@ const AboutMe: React.FC = () => {
               França e em Dubai.
             </p>
           </div>
-
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h3 className="font-bold text-xs tracking-widest uppercase mb-4 text-white/70">
                 Áreas de Atuação
@@ -107,7 +95,6 @@ const AboutMe: React.FC = () => {
               </ul>
             </div>
           </div>
-
           <div className="mt-4">
             <p className="font-bold text-xs tracking-widest uppercase mb-4 text-white/70">
               felipe@felipempadula.com
@@ -116,19 +103,12 @@ const AboutMe: React.FC = () => {
         </div>
 
         {/* Right Column - Image */}
-        <div className="md:col-span-7">
-          {/* CORREÇÃO: 
-             1. 'bg-gray-900': Fundo escuro sólido para bloquear o vermelho da página. 
-                Se a imagem tiver transparência, mostrará cinza escuro, não vermelho.
-             2. 'h-[...]': Altura fixa para garantir o layout.
-          */}
-          <div className="relative overflow-hidden w-full h-[60vh] md:h-[80vh] bg-gray-900 rounded-lg">
+        <div className="lg:col-span-7 order-1 lg:order-2">
+          <div className="relative overflow-hidden w-full h-[50vh] md:h-[80vh] bg-gray-900 rounded-lg">
             <img
               ref={imageRef}
               src="/images/felmenor.webp"
               alt="Felipe Mello Padula"
-              // CORREÇÃO: 'mix-blend-normal' garante que a imagem não misture com o fundo.
-              // 'object-cover' garante que a imagem preencha tudo sem deixar tarjas.
               className="w-full h-full object-cover transition-all duration-700 ease-out mix-blend-normal"
             />
           </div>

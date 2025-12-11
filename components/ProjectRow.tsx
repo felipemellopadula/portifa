@@ -1,3 +1,4 @@
+// src/components/ProjectRow.tsx
 import React, { useRef } from "react";
 import gsap from "gsap";
 import { Project } from "../types";
@@ -47,6 +48,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
     }
 
     if (textRef.current) {
+      // TEXTO SEMPRE BRANCO NO HOVER (POIS A CAIXA É PRETA)
       gsap.to(textRef.current.children, {
         color: "#ffffff",
         duration: 0.2,
@@ -102,7 +104,6 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
     }
   };
 
-  // Função auxiliar para quebrar o título quando houver " / "
   const renderTitle = () => {
     if (project.title.includes(" / ")) {
       return project.title.split(" / ").map((part, index, arr) => (
@@ -110,8 +111,8 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
           {part}
           {index < arr.length - 1 && (
             <>
-              {" /"}
-              <br />
+              <span className="hidden md:inline"> /</span>
+              <br className="md:block hidden" />
             </>
           )}
         </React.Fragment>
@@ -122,40 +123,42 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
 
   return (
     <div
-      className="group relative flex flex-col md:flex-row items-start md:items-stretch w-full py-12 md:py-16 border-l-2 border-black/10 md:border-none pl-8 md:pl-0 transition-all duration-300 cursor-pointer"
+      className="group relative flex flex-col md:flex-row items-start md:items-stretch w-full py-8 md:py-16 border-b md:border-b-0 md:border-l-2 border-black/10 md:pl-0 transition-all duration-300 cursor-pointer"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={() => onClick(project)}
     >
       {/* Date & Role - Left Column */}
-      <div className="relative flex flex-col justify-center md:justify-start md:w-48 lg:w-64 flex-shrink-0 pt-2 md:pt-4 md:pl-12 lg:pl-16 mb-4 md:mb-0">
-        {/* Animated Black Square Background */}
+      <div className="relative flex flex-row md:flex-col justify-between md:justify-start w-full md:w-48 lg:w-64 flex-shrink-0 pt-0 md:pt-4 md:pl-12 lg:pl-16 mb-2 md:mb-0">
+        {/* Animated Black Square Background - RESTAURADO PARA PRETO FIXO */}
         <div
           ref={blackBoxRef}
           className="absolute top-0 bottom-0 -left-4 -right-4 md:left-8 md:right-8 bg-black z-0 opacity-0 origin-left"
           style={{ transform: "scaleX(0)" }}
         ></div>
 
-        {/* Date & Role Text - Usa Roboto Mono (herdado do body) */}
-        <div ref={textRef} className="relative z-10 flex flex-col font-mono">
-          <span className="font-normal text-sm md:text-base tracking-widest uppercase mb-1 transition-colors">
+        {/* Date & Role Text */}
+        <div
+          ref={textRef}
+          className="relative z-10 flex flex-row md:flex-col gap-4 md:gap-0 font-mono w-full md:w-auto justify-between md:justify-start"
+        >
+          <span className="font-normal text-xs md:text-sm lg:text-base tracking-widest uppercase mb-1 transition-colors">
             {project.year}
           </span>
-          <span className="font-normal text-sm md:text-base uppercase opacity-70 group-hover:opacity-100 transition-all">
+          <span className="font-normal text-xs md:text-sm lg:text-base uppercase opacity-70 group-hover:opacity-100 transition-all">
             {project.role}
           </span>
         </div>
       </div>
 
       {/* Vertical Divider for Desktop */}
-      <div className="hidden md:block w-[2px] bg-black h-auto mx-4 md:mx-8 scale-y-100 origin-top group-hover:bg-black transition-colors duration-300"></div>
+      <div className="hidden md:block w-[2px] bg-black h-auto mx-4 md:mx-8 scale-y-100 origin-top group-hover:bg-white transition-colors duration-300"></div>
 
       {/* Project Title - Main Content */}
-      <div className="flex-1 relative perspective-[1000px]">
+      <div className="flex-1 relative perspective-[1000px] w-full">
         <h2
           ref={titleRef}
-          // Fonte Titillium Web peso 900
-          className="text-6xl md:text-8xl lg:text-[9rem] leading-[0.8] tracking-tight uppercase text-outline origin-left cursor-pointer select-none"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-[9rem] leading-[0.9] md:leading-[0.8] tracking-tight uppercase text-outline origin-left cursor-pointer select-none break-words"
           style={{
             fontFamily: '"Titillium Web", sans-serif',
             fontWeight: 900,
