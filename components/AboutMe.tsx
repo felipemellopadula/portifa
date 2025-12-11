@@ -98,19 +98,19 @@ const AboutMe: React.FC = () => {
           <div className="grid grid-cols-2 gap-8">
             <div>
               <h3 className="font-bold text-xs tracking-widest uppercase mb-4 text-white/70">
-                Services
+                Áreas de Atuação
               </h3>
               <ul className="flex flex-col gap-2 opacity-90">
                 <li>Diretor de Arte</li>
                 <li>Design Digital</li>
-                <li>Artista 3D generalista</li>
+                <li>Artista 3D Generalista</li>
               </ul>
             </div>
           </div>
 
           <div className="mt-4">
             <p className="font-bold text-xs tracking-widest uppercase mb-4 text-white/70">
-              contato@felipempadula.com
+              felipe@felipempadula.com
             </p>
           </div>
         </div>
@@ -125,7 +125,7 @@ const AboutMe: React.FC = () => {
           <div className="relative overflow-hidden w-full h-[60vh] md:h-[80vh] bg-gray-900 rounded-lg">
             <img
               ref={imageRef}
-              src="/images/fel.png"
+              src="/images/felmenor.webp"
               alt="Felipe Mello Padula"
               // CORREÇÃO: 'mix-blend-normal' garante que a imagem não misture com o fundo.
               // 'object-cover' garante que a imagem preencha tudo sem deixar tarjas.

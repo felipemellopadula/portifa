@@ -147,9 +147,9 @@ const Sidebar: React.FC<SidebarProps> = ({ onNavigate, currentView }) => {
           </span>
         </button>
 
-        {/* Mantive o Contact separado, conforme padrão anterior, mas traduzido para minúsculo para combinar */}
+        {/* Link para a página de contato PHP na raiz */}
         <a
-          href="#"
+          href="/contato.php"
           className="flex items-center gap-2 hover:line-through decoration-2 text-white"
         >
           <span>contato</span>
@@ -159,18 +159,34 @@ const Sidebar: React.FC<SidebarProps> = ({ onNavigate, currentView }) => {
 
       {!isProjectView && (
         <div className="mt-8 flex flex-col gap-1 items-end">
+          {/* Link Instagram */}
           <a
-            href="#"
+            href="https://www.instagram.com/diariosdeumcriativo"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 hover:line-through decoration-2 text-white"
           >
             <span>instagram</span>
             <span className="font-bold">X</span>
           </a>
+
+          {/* Link Facebook */}
           <a
-            href="#"
+            href="https://www.facebook.com/fmello85"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 hover:line-through decoration-2 text-white"
           >
             <span>facebook</span>
+            <span className="font-bold">X</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/fmellopadula"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:line-through decoration-2 text-white"
+          >
+            <span>linkedin</span>
             <span className="font-bold">X</span>
           </a>
         </div>
